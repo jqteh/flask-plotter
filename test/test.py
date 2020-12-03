@@ -9,6 +9,6 @@ data_in_json = """
 }
 """
 
-resp = requests.post("http://localhost:5000/plotter", files={'data': data_in_json})
+resp = requests.post("http://127.0.0.1:5000/plotter", json=data_in_json)
 
 print(resp)
