@@ -12,7 +12,7 @@ def plotter():
             return jsonify({'error':'no data'})
 
         try:
-            plot(data)
-            return jsonify({'correct':'success'})
+            message = plot(data)
+            return jsonify({'correct': message})
         except:
-            return jsonify({'error':'error during plotting'})
+            return jsonify({'error':'error during calling plot function'})
