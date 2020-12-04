@@ -7,16 +7,16 @@ app = Flask(__name__)
 def plotter():
     if request.method == 'POST':
         if not request.is_json:
-            return jsonify({'error': 'The posted data is not JSON'})
+            return jsonify({'ERROR': 'The posted data is not JSON'})
 
         data = request.get_json()
         print(data)
-        
+
         if data is None:
-            return jsonify({'error':'no data'})
+            return jsonify({'ERROR':'No data contained in JSON'})
 
         try:
             message = plot(data)
-            return jsonify({'message': message})
+            return jsonify(message)
         except:
-            return jsonify({'error':'error during calling plot function'})
+            return jsonify({'ERROR':'Error arised when plot function is called'})
