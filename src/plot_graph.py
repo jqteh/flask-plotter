@@ -16,7 +16,7 @@ def plot(data_in_json):
         plt.scatter(x, y)
         ax.imshow(img, extent=[23, 42, 17, 39])
     
-        fig.savefig('src/bin/figure.png')
+        fig.savefig('src/bin/figure.png', format='png', dpi=400)
         plt.close(fig)
     except:
         return {'ERROR': 'Problem arised during plotting'}

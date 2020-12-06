@@ -2,4 +2,4 @@
 /src/_pycache_/*
 
 # Ignore the output file
-/src/bin/*
+/src/bin/figure.png

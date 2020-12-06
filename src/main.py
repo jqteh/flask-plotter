@@ -1,7 +1,7 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_file
 from plot_graph import plot
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/bin')
 
 @app.route('/plotter', methods=['POST'])
 def plotter():
@@ -17,6 +17,8 @@ def plotter():
 
         try:
             message = plot(data)
-            return jsonify(message)
         except:
-            return jsonify({'ERROR':'Error arised when plot function is called'})
+            return jsonify(message)
+
+        pathname = 'bin/figure.png'
+        return send_file(pathname, mimetype='image/png')
