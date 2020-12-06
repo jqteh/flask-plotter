@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-import json
 import numpy as np
 
 def plot(data_in_json):
