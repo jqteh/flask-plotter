@@ -5,8 +5,8 @@ import numpy as np
 def plot(data_in_json):
 
     try:
-        x = np.array(data_in_json["Felipe"]["time"])
-        y = np.array(data_in_json["Felipe"]["measurements"])
+        x = np.array(data_in_json["time"])
+        y = np.array(data_in_json["measurements"])
     except:
         return {'ERROR': 'Unmatching JSON keys'}
 
