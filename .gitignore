@@ -1,5 +1,31 @@
 # Ignore _pycache_ file in the app, becuase it's temporary objects created during runtime
-/src/_pycache_/**
+/src/__pycache__/
 
 # Ignore the output file
-/src/bin/figure.png
+/src/bin/
+
+# template from https://github.com/pallets/flask/blob/master/.gitignore
+.DS_Store
+.env
+.flaskenv
+*.pyc
+*.pyo
+env/
+env*
+dist/
+build/
+*.egg
+*.egg-info/
+_mailinglist
+.tox/
+.cache/
+.pytest_cache/
+.idea/
+docs/_build/
+.vscode
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+*,cover
