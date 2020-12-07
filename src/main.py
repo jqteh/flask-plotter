@@ -16,6 +16,7 @@ def plotter():
             return jsonify({'ERROR':'No data contained in JSON'})
 
         try:
+            plot(data)
             message = plot(data)
         except:
             return jsonify(message)
