@@ -5,6 +5,7 @@ import io
 def plot(data_in_json):
 
     try:
+        # parse the JSON data
         x = np.array(data_in_json["time"])
         y = np.array(data_in_json["measurements"])
     except:
@@ -20,12 +21,12 @@ def plot(data_in_json):
         return {'ERROR': 'Problem arised during plotting'}
 
     try:
-        img = io.BytesIO()
+        img = io.BytesIO()      # img is the url for the memory in buffer
     except:
         return {'ERROR': 'Problem arised during io'}
 
     try:
-        fig.savefig(img, bbox_inches='tight', format='png', dpi=400)
+        fig.savefig(img, bbox_inches='tight', format='png', dpi=400)        # save the image into the url of the memory created just now
         plt.close(fig)
         return img
     except:
