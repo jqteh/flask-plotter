@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify, send_file
 from plot_graph import plot
+import io
 
 app = Flask(__name__, static_url_path='/bin')
 
@@ -16,10 +17,10 @@ def plotter():
             return jsonify({'ERROR':'No data contained in JSON'})
 
         try:
-            plot(data)
-            message = plot(data)
+            img = plot(data)
+            img.seek(0)
         except:
-            return jsonify(message)
+            return jsonify(img)
 
-        pathname = 'bin/figure.png'
-        return send_file(pathname, mimetype='image/png')
+        #pathname = 'bin/figure.png'
+        return send_file(img, mimetype='image/png')
