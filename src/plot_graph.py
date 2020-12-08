@@ -11,7 +11,7 @@ def plot(data_in_json):
         return {'ERROR': 'Unmatching JSON keys'}
 
     try:
-        back = plt.imread("src/static/gestation.png")
+        back = plt.imread("static/gestation.png")
         fig, ax = plt.subplots()
         plt.scatter(x, y, s=100 , c='r', marker='x', linewidths=1)
         ax.imshow(back, extent=[23, 42, 17, 39])
