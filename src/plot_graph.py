@@ -15,12 +15,15 @@ def plot(data_in_json):
         fig, ax = plt.subplots()
         plt.scatter(x, y, s=100 , c='r', marker='x', linewidths=1)
         ax.imshow(back, extent=[23, 42, 17, 39])
-    except:
+    except Exception as e:
+        print(e)
         return {'ERROR': 'Problem arised during plotting'}
+
     try:
         img = io.BytesIO()
     except:
         return {'ERROR': 'Problem arised during io'}
+
     try:
         fig.savefig(img, bbox_inches='tight', format='png', dpi=400)
         plt.close(fig)
